@@ -1,0 +1,74 @@
+page {
+    background-color: #f5f5f5;
+    width: 100%;
+    overflow-x: hidden;
+    padding-bottom: 80rpx;
+}
+
+.weui-cell__ft {
+    color: black;
+}
+
+.unEditColor {
+    color: #999;
+}
+
+/* .weui-cell__bd {
+  color: #999
+} */
+
+.weui-btn-area {
+    margin: 40rpx 40rpx 0;
+}
+
+.oneLine {
+    white-space: nowrap;
+    overflow: hidden;
+    -ms-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+}
+
+.multiLine {
+    display: block;
+    overflow: hidden;
+    word-break: normal;
+    word-wrap: break-word;
+    min-height: 2.58823529em;
+    /* line-height:2.58823529em; */
+}
+
+.align-items_start {
+    align-items: flex-start;
+    -webkit-box-align: flex-start;
+    -webkit-align-items: flex-start;
+}
+
+.requiredInditify {
+    color: red;
+    /* width: 5px; */
+    display: inline-block;
+}
+
+.page__hd {
+    padding:  10px 20px;
+}
+
+.page__desc {
+    margin-top: 5px;
+    color: #1462ad;
+    text-align: left;
+    font-size: 12px;
+}
+.bottomLine {
+    padding-bottom: 35rpx;
+
+}
+.bottomLine:after {
+    position: absolute;
+    content: "修改后需上级监管单位审核";
+    bottom: 1px;
+    left: 15px;
+    font-size: 25rpx;
+    color: grey;
+    margin-bottom: 5rpx
+}

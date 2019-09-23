@@ -1,4 +1,5 @@
-/**app.wxss**/
+@import "weui.wxss";
+
 .container {
   display: flex;
   flex-direction: column;
@@ -52,7 +53,6 @@ page {
 .userinfo-avatar:after {
   border: none;
 }
-
 .userinfo-nickname {
   font-size: 32rpx;
   color: #007aff;

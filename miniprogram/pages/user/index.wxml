@@ -1,0 +1,31 @@
+<view class="top">
+    <view class="avatar-area"> 
+        <view class="myInfo">
+            <button open-type="getUserInfo" bindgetuserinfo="onGetUserInfo" class="avatar"
+            style="background-image: url({{avatarUrl}})"></button>
+            <view class="nickname">{{nickName}}</view> 
+        </view>
+    </view> 
+    <view class="view-line"></view>
+
+    <!--个人中心列表项-->
+    <view class="item_list">
+        <view bindtap="jumps" data-url='./list/index' class="item_list_msg bottom-border">
+            <view class="list_icon">
+                <image src="/images/ic_my_04.png"></image>  
+                <view wx:if="{{msgNum>0}}" class="msg-num">{{msgNum}}</view>  
+            </view>
+            <view class="list_text">用户列表</view>
+            <text class="arrow"></text>
+        </view>
+        <view class="view-line"></view>
+        <view bindtap="jumps" data-url='./signIn/index' class="item_list_msg">
+            <view class="list_icon">
+                <image src="/images/ic_my_04.png"></image>   
+            </view>
+            <view class="list_text">注册</view>
+            <text class="arrow"></text>
+        </view>
+        <view class="view-line"></view>
+    </view>
+</view>

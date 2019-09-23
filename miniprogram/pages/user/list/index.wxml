@@ -1,0 +1,7 @@
+<view class='page'>
+    <view class="list" wx:for="{{items}}" wx:key="{{index}}">
+        <view class="item">{{item.username}}</view>
+        <view class="item">{{item.password}}</view>
+        <view class="item">{{item.nickname}}</view>
+    </view>
+</view>

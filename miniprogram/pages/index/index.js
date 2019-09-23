@@ -3,20 +3,30 @@ const app = getApp()
 
 Page({
     data: {
-        avatarUrl: './user-unlogin.png',
+        avatarUrl: '../../images/user-unlogin.png',
         userInfo: {},
         logged: false,
         takeSession: false,
         requestResult: ''
     },
 
-    onLoad: function () {
+    onLoad() {
+        let that = this
         if (!wx.cloud) {
             wx.redirectTo({
                 url: '../chooseLib/chooseLib',
             })
             return
         }
+
+        wx.getStorage({
+            key: 'userInfo',
+            success(res) {
+                that.setData({
+                    avatarUrl: res.avatarUrl || ''
+                })
+            },
+        })
 
         // 获取用户信息
         wx.getSetting({
@@ -29,6 +39,7 @@ Page({
                                 avatarUrl: res.userInfo.avatarUrl,
                                 userInfo: res.userInfo
                             })
+                            wx.setStorageSync('userInfo', res.userInfo)
                         }
                     })
                 }
@@ -36,8 +47,9 @@ Page({
         })
     },
 
-    onGetUserInfo: function (e) {
+    onGetUserInfo(e) {
         if (!this.logged && e.detail.userInfo) {
+            wx.setStorageSync('userInfo', e.detail.userInfo)
             this.setData({
                 logged: true,
                 avatarUrl: e.detail.userInfo.avatarUrl,
@@ -46,7 +58,7 @@ Page({
         }
     },
 
-    onGetOpenid: function () {
+    onGetOpenid() {
         // 调用云函数
         wx.cloud.callFunction({
             name: 'login',
@@ -68,13 +80,13 @@ Page({
     },
 
     // 上传图片
-    doUpload: function () {
+    doUpload() {
         // 选择图片
         wx.chooseImage({
             count: 1,
             sizeType: ['compressed'],
             sourceType: ['album', 'camera'],
-            success: function (res) {
+            success(res) {
 
                 wx.showLoading({
                     title: '上传中',

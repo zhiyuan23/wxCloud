@@ -11,7 +11,11 @@
         "pages/openapi/openapi",
         "pages/openapi/serverapi/serverapi",
         "pages/openapi/callback/callback",
-        "pages/openapi/cloudid/cloudid"
+        "pages/openapi/cloudid/cloudid",
+        "pages/user/index",
+        "pages/user/test/index",
+        "pages/user/signIn/index",
+        "pages/user/list/index"
     ],
     "window": {
         "backgroundColor": "#F6F6F6",
@@ -19,6 +23,26 @@
         "navigationBarBackgroundColor": "#F6F6F6",
         "navigationBarTitleText": "云开发 QuickStart",
         "navigationBarTextStyle": "black"
+    },
+    "tabBar": {
+        "borderStyle": "white",
+        "color": "#9f9db0",
+        "selectedColor": "#1462ad",
+        "backgroundColor": "#fff",
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "iconPath": "/images/ic_b_l.png",
+                "text": "日常",
+                "selectedIconPath": "/images/ic_b_l_h.png"
+            },
+            {
+                "pagePath": "pages/user/index",
+                "text": "我的",
+                "iconPath": "/images/ic_b_r.png",
+                "selectedIconPath": "/images/ic_b_r_h.png"
+            }
+        ]
     },
     "sitemapLocation": "sitemap.json"
 }
